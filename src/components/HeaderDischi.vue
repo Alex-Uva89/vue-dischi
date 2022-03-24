@@ -26,15 +26,15 @@ export default {
 </script>
 
 <style lang="scss" scoped>
-@import '../assets/variables.scss';
+@import '../assets/style/style.scss';
 
 .my-header{
     height: 3rem;
 }
 
 .column-left{
-    color: $green-logo;
     filter: brightness(50);
     font-size: 2rem;
+    color: $green-logo
 }
 </style>

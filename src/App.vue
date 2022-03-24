@@ -10,7 +10,7 @@
 import HeaderDischi from './components/HeaderDischi.vue';
 import FooterDischi from './components/FooterDischi.vue';
 import MainDischi from './components/MainDischi.vue';
-import "../assets/variables.scss";
+import './assets/style/style.scss'
 
 export default {
   name: 'App',
