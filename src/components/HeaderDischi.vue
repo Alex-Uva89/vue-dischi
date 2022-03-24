@@ -33,8 +33,8 @@ export default {
 }
 
 .column-left{
-    filter: brightness(50);
+    filter: brightness(1);
     font-size: 2rem;
-    color: $green-logo
+    color: $green-logo;
 }
 </style>
