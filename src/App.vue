@@ -10,6 +10,7 @@
 import HeaderDischi from './components/HeaderDischi.vue';
 import FooterDischi from './components/FooterDischi.vue';
 import MainDischi from './components/MainDischi.vue';
+import "../assets/variables.scss";
 
 export default {
   name: 'App',
@@ -26,5 +27,4 @@ $primary: rgb(46,58,70);
 $secondary: rgb(30,45,59);
 
 @import "~bootstrap/scss/bootstrap";
-@import "assets/variables.scss";
 </style>
