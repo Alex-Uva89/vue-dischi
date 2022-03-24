@@ -1,7 +1,7 @@
 <template>
   <main class="bg-secondary">
-      <div class="container p-5">
-      <div class="row row-cols-lg-5">
+      <div class="container pt-5 pb-3">
+      <div class="row row-cols-2 row-cols-md-3 row-cols-lg-4 row-cols-xl-5">
           <card-album v-for="(album, index) in arrAlbum" 
             :key="index" 
             :album-data="album"

@@ -5,7 +5,7 @@
           <i class="fa-brands fa-spotify"></i>
       </div>
       <div class="column-right">
-          <select name="generi" id="">
+          <select class="p-1" name="generi" id="">
               <option value="all">--seleziona generi--</option>
               <option value="rock">rock</option>
               <option value="jazz">jazz</option>
@@ -29,7 +29,7 @@ export default {
 @import '../assets/style/style.scss';
 
 .my-header{
-    height: 3rem;
+    height: 3.5rem;
 }
 
 .column-left{
