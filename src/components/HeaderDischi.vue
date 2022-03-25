@@ -5,23 +5,18 @@
           <i class="fa-brands fa-spotify"></i>
       </div>
       <div class="column-right">
-          <select class="p-1" name="generi" id="">
-              <option value="all">--seleziona generi--</option>
-              <option value="rock">rock</option>
-              <option value="jazz">jazz</option>
-              <option value="pop">pop</option>
-              <option value="metal">metal</option>
-          </select>
+      <search-album />
       </div>
       </div>
   </header>
 </template>
 
 <script>
-
+import SearchAlbum from '@/components/SearchAlbum.vue'
 
 export default {
-    name: 'HeaderDischi'
+    name: 'HeaderDischi',
+    components: { SearchAlbum },
 }
 </script>
 

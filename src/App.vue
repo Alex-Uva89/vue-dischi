@@ -10,15 +10,28 @@
 import HeaderDischi from './components/HeaderDischi.vue';
 import FooterDischi from './components/FooterDischi.vue';
 import MainDischi from './components/MainDischi.vue';
+import axios from 'axios';
 
 
 export default {
   name: 'App',
+  data() {
+        return {
+            arrAlbum: null,
+        }
+    },
   components: {
     HeaderDischi,
     FooterDischi,
     MainDischi
-  }
+  },
+  created(){
+        axios.get('https://flynn.boolean.careers/exercises/api/array/music')
+        .then((result) => {
+            console.log(result.data)
+            this.arrAlbum = result.data.response
+        })
+    }
 }
 </script>
 

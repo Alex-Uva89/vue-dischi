@@ -13,26 +13,16 @@
 
 <script>
 import CardAlbum from './CardAlbum.vue';
-import axios from 'axios';
+
 
 export default {
   components: { CardAlbum },
     name: 'MainDischi',
-    data() {
-        return {
-            arrAlbum: null,
-        }
-    },
+    
     component: {
         CardAlbum
     },
-    created(){
-        axios.get('https://flynn.boolean.careers/exercises/api/array/music')
-        .then((result) => {
-            console.log(result.data)
-            this.arrAlbum = result.data.response
-        })
-    }
+    
 }
 </script>
 
