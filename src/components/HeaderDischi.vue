@@ -5,18 +5,29 @@
           <i class="fa-brands fa-spotify"></i>
       </div>
       <div class="column-right">
-      <search-album />
+      
+      <select v-model="searchGenres" @change="$emit('sendGenre', searchGenres)" class="p-1" name="generi" id="genres-search">
+          <option value="all">tutti</option>
+          <option v-for="genre in arrGenres" :key="genre" :value="genre">{{ genre }}</option>       
+      </select>
       </div>
       </div>
   </header>
 </template>
 
 <script>
-import SearchAlbum from '@/components/SearchAlbum.vue'
+
 
 export default {
     name: 'HeaderDischi',
-    components: { SearchAlbum },
+    props:{
+        arrGenres: Array,
+    },
+    data() {
+        return {
+            searchGenres: '',
+        }
+    }
 }
 </script>
 

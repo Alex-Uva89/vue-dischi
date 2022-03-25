@@ -1,7 +1,13 @@
 <template>
   <div id="app">
-    <header-dischi />
-    <main-dischi />
+    <header-dischi 
+    @sendGenre: selectGenere
+    :arrGenres="arrGenres"
+     />
+    <main-dischi 
+    :selectionGenre= valueSelection
+    :arrAlbum="arrAlbum"
+     />
     <footer-dischi />
   </div>
 </template>
@@ -12,12 +18,13 @@ import FooterDischi from './components/FooterDischi.vue';
 import MainDischi from './components/MainDischi.vue';
 import axios from 'axios';
 
-
 export default {
   name: 'App',
   data() {
         return {
             arrAlbum: null,
+            arrGenres: [],
+            valueSelection: '',
         }
     },
   components: {
@@ -25,13 +32,26 @@ export default {
     FooterDischi,
     MainDischi
   },
+   methods: {
+    selectGenere (value) {
+      this.valueSelection = value
+      console.log(value)
+    }
+  },
+  
   created(){
         axios.get('https://flynn.boolean.careers/exercises/api/array/music')
         .then((result) => {
-            console.log(result.data)
             this.arrAlbum = result.data.response
+            for (let album = 0; album < this.arrAlbum.length; album++) {
+              if (!this.arrGenres.includes(this.arrAlbum[album].genre)) {
+                this.arrGenres.push(this.arrAlbum[album].genre)
+                console.log(this.arrGenres)
+              }  
+          }
         })
-    }
+    },
+    
 }
 </script>
 
