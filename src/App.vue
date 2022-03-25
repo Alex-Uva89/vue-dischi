@@ -1,7 +1,7 @@
 <template>
   <div id="app">
     <header-dischi 
-    @sendGenre: selectGenere
+    @sendGenre="selectGenere"
     :arrGenres="arrGenres"
      />
     <main-dischi 
@@ -35,7 +35,7 @@ export default {
    methods: {
     selectGenere (value) {
       this.valueSelection = value
-      console.log(value)
+      console.log(this.valueSelection)
     }
   },
   
@@ -46,7 +46,6 @@ export default {
             for (let album = 0; album < this.arrAlbum.length; album++) {
               if (!this.arrGenres.includes(this.arrAlbum[album].genre)) {
                 this.arrGenres.push(this.arrAlbum[album].genre)
-                console.log(this.arrGenres)
               }  
           }
         })

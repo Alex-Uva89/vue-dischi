@@ -1,5 +1,5 @@
 <template>
-  <main class="bg-secondary">
+  <main class="bg-secondary my-container">
       <div class="container pt-5 pb-3">
       <div class="row row-cols-2 row-cols-md-3 row-cols-lg-4 row-cols-xl-5">
           <card-album v-for="album in filterArray" 
@@ -28,18 +28,20 @@ export default {
     },
     computed: {
       filterArray () {
-        if ( this.selectionGenre === '') {
+        if ( this.selectionGenre === 'all' || this.selectionGenre === '' ) {
           return this.arrAlbum
         } else {
           return this.arrAlbum.filter(objGenre => objGenre.genre.includes(this.selectionGenre))
-          
         }
+          
       }   
     }
 }
 </script>
 
 <style lang="scss" scoped>
-
+.my-container{
+  height: calc(100vh - 3.5rem);
+}
 
 </style>

@@ -4,12 +4,14 @@
       <div class="column-left">
           <i class="fa-brands fa-spotify"></i>
       </div>
+
       <div class="column-right">
-      
+      <label for="select" class="me-2 text-white text-uppercase">cerca per genere</label>
       <select v-model="searchGenres" @change="$emit('sendGenre', searchGenres)" class="p-1" name="generi" id="genres-search">
           <option value="all">tutti</option>
           <option v-for="genre in arrGenres" :key="genre" :value="genre">{{ genre }}</option>       
       </select>
+
       </div>
       </div>
   </header>
@@ -43,4 +45,5 @@ export default {
     font-size: 2rem;
     color: $green-logo;
 }
+
 </style>
